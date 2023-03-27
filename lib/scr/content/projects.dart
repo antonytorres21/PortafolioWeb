@@ -7,7 +7,6 @@ import 'package:portafolio/scr/models/projects.dart';
 import 'package:portafolio/scr/widget/response_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-bool autoPlayU = false;
 int indexU = 0;
 
 class Projects extends ResponsiveWidget {
@@ -37,7 +36,6 @@ class DesktopBuild extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final autoplay = useState<bool>(autoPlayU);
     double height = MediaQuery.of(context).size.height;
     final indexUn = useState<int>(0);
 
@@ -48,22 +46,6 @@ class DesktopBuild extends HookConsumerWidget {
           const Text(
             "Projects",
             style: TextStyle(color: Colors.white, fontSize: 30.0),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Text(
-                "Auto play",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              Switch(
-                value: autoplay.value,
-                onChanged: (value) {
-                  autoplay.value = value;
-                  autoPlayU = value;
-                },
-              )
-            ],
           ),
           Column(
             children: [
@@ -88,7 +70,6 @@ class DesktopBuild extends HookConsumerWidget {
                     indexUn.value = value;
                   },
                   curve: Curves.easeIn,
-                  autoplay: autoplay.value,
                   itemCount: projects.length,
                   pagination: const SwiperPagination(),
                   control: const SwiperControl(),
@@ -117,7 +98,6 @@ class DesktopBuild extends HookConsumerWidget {
                     launchUrl(projects[indexUn.value].link);
                   },
                   curve: Curves.easeIn,
-                  autoplay: autoplay.value,
                   itemCount: projects[indexUn.value].image.length,
                   pagination: const SwiperPagination(),
                   control: const SwiperControl(),
@@ -153,7 +133,6 @@ class DesktopBuild extends HookConsumerWidget {
                     );
                   },
                   curve: Curves.easeIn,
-                  autoplay: autoplay.value,
                   itemCount: projects[indexUn.value].tecnologis.length,
                   pagination: const SwiperPagination(),
                   control: const SwiperControl(),
@@ -173,29 +152,13 @@ class MobileBuild extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final indexUn = useState<int>(0);
-    final autoplay = useState<bool>(autoPlayU);
+
     return SizedBox(
       child: Column(
         children: <Widget>[
           const Text(
             "Projects",
             style: TextStyle(color: Colors.white, fontSize: 30.0),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Text(
-                "Auto play",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              Switch(
-                value: autoplay.value,
-                onChanged: (value) {
-                  autoplay.value = value;
-                  autoPlayU = value;
-                },
-              )
-            ],
           ),
           Column(
             children: [
@@ -221,7 +184,6 @@ class MobileBuild extends HookConsumerWidget {
                     indexUn.value = value;
                   },
                   curve: Curves.easeIn,
-                  autoplay: autoplay.value,
                   itemCount: projects.length,
                   pagination: const SwiperPagination(),
                   control: const SwiperControl(),
@@ -250,7 +212,6 @@ class MobileBuild extends HookConsumerWidget {
                     launchUrl(projects[indexUn.value].link);
                   },
                   curve: Curves.easeIn,
-                  autoplay: autoplay.value,
                   itemCount: projects[indexUn.value].image.length,
                   pagination: const SwiperPagination(),
                   control: const SwiperControl(),
@@ -284,7 +245,6 @@ class MobileBuild extends HookConsumerWidget {
                     );
                   },
                   curve: Curves.easeIn,
-                  autoplay: autoplay.value,
                   itemCount: projects[indexUn.value].tecnologis.length,
                   pagination: const SwiperPagination(),
                   control: const SwiperControl(),
