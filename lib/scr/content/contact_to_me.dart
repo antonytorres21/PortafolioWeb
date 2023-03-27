@@ -80,7 +80,7 @@ class DesktopBuild extends StatelessWidget {
                   onTap: () => launchUrlString(LinkedinURL),
                   child: SizedBox(
                       height: 70,
-                      child: Image.asset("../assets/linkedin.png",
+                      child: Image.asset("assets/linkedin.png",
                           color: Colors.grey)),
                 ),
               ),
@@ -93,7 +93,7 @@ class DesktopBuild extends StatelessWidget {
                   onTap: () => launchUrlString(GitHunURL),
                   child: SizedBox(
                       height: 70,
-                      child: Image.asset("../assets/Github.png",
+                      child: Image.asset("assets/Github.png",
                           color: Colors.grey)),
                 ),
               ),

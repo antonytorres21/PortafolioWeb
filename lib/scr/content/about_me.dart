@@ -42,7 +42,7 @@ class DesktopBuild extends StatelessWidget {
                     child: CircularProfile(
                       radius: 120,
                       image: AssetImage(
-                        '../assets/Yo2.jpg',
+                        'assets/Yo2.jpg',
                       ),
                     ),
                   ),
