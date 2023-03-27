@@ -169,7 +169,6 @@ class MobileBuild extends HookConsumerWidget {
                   viewportFraction: 0.8,
                   scale: 0.9,
                   itemBuilder: (BuildContext context, int index) {
-                    indexUn.value = index;
                     return Column(
                       children: [
                         Text(

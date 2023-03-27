@@ -42,7 +42,6 @@ dependencies:
   circular_profile: ^0.0.2
   animated_text_kit: ^4.2.2
   social_media_flutter: ^0.0.2
-  flutter_animated_icons: ^1.0.1
   card_swiper: ^2.0.4
 
 dev_dependencies:
